@@ -6,7 +6,7 @@ notes.get('/', (req, res) => {
 });
 
 notes.post('/', (req, res) => {
-    console.log(req.body);
+    // console.log(req.body);
 
     const { title, text } = req.body;
 
