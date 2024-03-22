@@ -1,28 +1,27 @@
-const note = require('express').Router();
+const notes = require('express').Router();
 const { readFromFile, readAndAppend } = require('../helpers/fsUtils');
-// const { v4: uuidv4 } = require('uuid');
 
-note.get('/', (req, res) => {
+notes.get('/', (req, res) => {
     readFromFile('./db/note.json').then((data) => res.json(JSON.parse(data)));
 });
 
-note.post('/', (req, res) => {
+notes.post('/', (req, res) => {
     console.log(req.body);
 
     const { title, text } = req.body;
 
     if (req.body) {
-        const newTip = {
+        const newNote = {
         title,
         text,
-        // tip_id: uuidv4(),
+        // id: crypto.randomUUID()
     };
 
-    readAndAppend(newTip, './db/note.json');
+    readAndAppend(newNote, './db/note.json');
     res.json(`note added successfully`);
     } else {
         res.error('Error in adding note');
     }
 });
 
-module.exports = note;
+module.exports = notes;
