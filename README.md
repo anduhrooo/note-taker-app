@@ -27,6 +27,10 @@ clone the repository, then run npm i in the terminal
 
 run 'node server.js' from the parent directory. then open 'localhost:3001" from your browser.
 
+<iframe width="560" height="315" src="https://youtu.be/AjvwCdpqqf4" frameborder="0" allowfullscreen></iframe>
+
+https://youtu.be/AjvwCdpqqf4
+
 ## Test
 
 n/a
